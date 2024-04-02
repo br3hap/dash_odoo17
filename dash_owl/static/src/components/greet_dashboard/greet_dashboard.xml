@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates xml:space="preserve">
+    <t t-name="owl.OwlGreetdashboard" owl="1">
+        <div class="card-group">
+            <div class="card">
+                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                <h5 t-esc="state.title"/>
+                <ul class="list-group list-group-flush" t-foreach="state.information" t-as="i" t-key="i.id">
+                    <li class="list-group-item" t-esc="i.description"/>
+                    <li class="list-group-item" t-esc="i.summary"/>
+                    <li class="list-group-item" t-esc="i.website"/>
+                </ul>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>            
+        </div>
+        <div class="card mt-3" style="width : 18rem;">
+            <div class="card">
+                <OwlChartRenderer title="'Odoo Modules Pie'" data ="state.countModules"/>
+            </div>
+
+        </div>
+
+        <div class="card mt-3" style="width : 18rem;">
+            <div class="card">
+                <OwlChartRenderer title="'Odoo Modules bar'" data ="state.countModules" type="'bar'"/>
+            </div>
+
+        </div>
+    </t>
+</templates>
